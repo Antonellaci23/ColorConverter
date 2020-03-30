@@ -9,41 +9,52 @@
 import SwiftUI
 
 struct ContentView: View {
-    var pickerR: [Int] = Array ( 1...255)
-    var stringR = (1...255).map(String.init)
+    var pickerR: [Int] = Array ( 0...255)
+    var stringR = (0...255).map(String.init)
     @State var selectR = 0
-    var pickerG: [Int] = Array (1...255)
-    var stringG = (1...255).map(String.init)
+    var pickerG: [Int] = Array (0...255)
+    var stringG = (0...255).map(String.init)
     @State var selectG = 0
-    var pickerB: [Int] = Array (1...255)
-    var stringB = (1...255).map(String.init)
+    var pickerB: [Int] = Array (0...255)
+    var stringB = (0...255).map(String.init)
     @State var selectB = 0
+    
 
     
-    var divideR: Int {
-        selectR / 16
+    var divideR: String {
+        let numR: Int = selectR / 16
+        let strR = String(numR, radix: 16)
+        return(strR)
     }
-    var restoR: Int {
-        selectR % 16
+    var restoR: String {
+        let numRR: Int = selectR % 16
+        let strRR = String(numRR, radix: 16)
+        return(strRR)
     }
-    var divideG: Int {
-        selectG / 16
-    }
-    var restoG: Int {
-        selectG % 16
-    }
-    var divideB: Int {
-        selectG / 16
-    }
-    var restoB: Int {
-        selectG % 16
-    }
-
     
+    var divideG: String {
+        let numG: Int = selectG / 16
+        let strG = String(numG, radix: 16)
+        return(strG)
+    }
+    var restoG: String {
+        let numGG: Int = selectG % 16
+        let strGG = String(numGG, radix: 16)
+        return(strGG)
+    }
+    
+    var divideB: String {
+        let numB: Int = selectB / 16
+        let strB = String(numB, radix: 16)
+        return(strB)
+    }
+    var restoB: String {
+        let numBB: Int = selectB % 16
+        let strBB = String(numBB, radix: 16)
+        return(strBB)
+    }
     
     var body: some View {
-        
-        
         
         VStack {
             HStack{
@@ -80,14 +91,14 @@ struct ContentView: View {
                 }
                 .colorMultiply(/*@START_MENU_TOKEN@*/ /*@PLACEHOLDER=Color@*/.blue/*@END_MENU_TOKEN@*/)
             }
-       
+            
             HStack {
-               
-                 Text("#\(divideR)\(restoR)\(divideG)\(restoG)\(divideB)\(restoB)")
+                Text("#\(divideR)\(restoR)\(divideG)\(restoG)\(divideB)\(restoB)")
             }
         }
     }
 }
+
 //                HStack {
 //                    Spacer()
 //                    if result <= 34 {
