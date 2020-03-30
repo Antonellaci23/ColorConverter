@@ -19,8 +19,6 @@ struct ContentView: View {
     var stringB = (0...255).map(String.init)
     @State var selectB = 0
     
-
-    
     var divideR: String {
         let numR: Int = selectR / 16
         let strR = String(numR, radix: 16)
