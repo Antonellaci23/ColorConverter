@@ -9,60 +9,83 @@
 import SwiftUI
 
 struct ContentView: View {
-    var pickerR: [Int] = Array (0...255)
-    var stringR = (0...255).map(String.init)
+    var pickerR: [Int] = Array ( 1...255)
+    var stringR = (1...255).map(String.init)
     @State var selectR = 0
-      var pickerG: [Int] = Array (0...255)
-      var stringG = (0...255).map(String.init)
+    var pickerG: [Int] = Array (1...255)
+    var stringG = (1...255).map(String.init)
     @State var selectG = 0
-     var pickerB: [Int] = Array (0...255)
-      var stringB = (0...255).map(String.init)
+    var pickerB: [Int] = Array (1...255)
+    var stringB = (1...255).map(String.init)
     @State var selectB = 0
 
-        
+    
     var divideR: Int {
         selectR / 16
     }
     var restoR: Int {
         selectR % 16
     }
-     var divideG: Int {
-         selectG / 16
-     }
-     var restoG: Int {
-         selectG % 16
-     }
+    var divideG: Int {
+        selectG / 16
+    }
+    var restoG: Int {
+        selectG % 16
+    }
     var divideB: Int {
-          selectG / 16
-      }
-      var restoB: Int {
-          selectG % 16
-      }
+        selectG / 16
+    }
+    var restoB: Int {
+        selectG % 16
+    }
 
+    
+    
+    var body: some View {
         
         
-        var body: some View {
-            
-            VStack {
+        
+        VStack {
+            HStack{
+                Spacer()
                 Text("R")
-                HStack {
-                    Picker(selection: $selectR, label: Text("")) {
-                        ForEach(0 ..< pickerR.count) {
-                            Text(self.stringR[$0])
-                        }
-                    }
-                    Picker(selection: $selectG, label: Text("")) {
-                        ForEach(0 ..< pickerG.count) {
-                            Text(self.stringG[$0])
-                        }
-                    }
-                    Picker(selection: $selectB, label: Text("")) {
-                        ForEach(0 ..< pickerB.count) {
-                            Text(self.stringB[$0])
-                        }
+                    .foregroundColor(Color.red)
+                Spacer()
+                Spacer()
+                Text("G")
+                    .foregroundColor(Color.green)
+                Spacer()
+                Spacer()
+                Text("B")
+                    .foregroundColor(Color.blue)
+                Spacer()
+            }
+            HStack {
+                Picker(selection: $selectR, label: Text("")) {
+                    ForEach(0 ..< pickerR.count) {
+                        Text(self.stringR[$0])
                     }
                 }
+                .colorMultiply(/*@START_MENU_TOKEN@*/ /*@PLACEHOLDER=Color@*/.red/*@END_MENU_TOKEN@*/)
+                Picker(selection: $selectG, label: Text("")) {
+                    ForEach(0 ..< pickerG.count) {
+                        Text(self.stringG[$0])
+                    }
+                }
+                .colorMultiply(/*@START_MENU_TOKEN@*/ /*@PLACEHOLDER=Color@*/.green/*@END_MENU_TOKEN@*/)
+                Picker(selection: $selectB, label: Text("")) {
+                    ForEach(0 ..< pickerB.count) {
+                        Text(self.stringB[$0])
+                    }
+                }
+                .colorMultiply(/*@START_MENU_TOKEN@*/ /*@PLACEHOLDER=Color@*/.blue/*@END_MENU_TOKEN@*/)
             }
+       
+            HStack {
+               
+                 Text("#\(divideR)\(restoR)\(divideG)\(restoG)\(divideB)\(restoB)")
+            }
+        }
     }
 }
 //                HStack {
@@ -137,8 +160,16 @@ struct ContentView: View {
 //        }
 //    }
 
+
+
+//struct ContentView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        /*@START_MENU_TOKEN@*/Text("Hello, World!")/*@END_MENU_TOKEN@*/
+//    }
+//}
+
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        /*@START_MENU_TOKEN@*/Text("Hello, World!")/*@END_MENU_TOKEN@*/
+        ContentView()
     }
 }
