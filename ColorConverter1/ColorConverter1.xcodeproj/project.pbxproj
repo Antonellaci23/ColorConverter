@@ -520,7 +520,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 22SRFN3JA2;
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = antonellacirma.ColorConverter1.watchkitapp;
+				PRODUCT_BUNDLE_IDENTIFIER = antonellacirma.ColorConverter1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 			};
@@ -533,7 +533,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 22SRFN3JA2;
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = antonellacirma.ColorConverter1.watchkitapp;
+				PRODUCT_BUNDLE_IDENTIFIER = antonellacirma.ColorConverter1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 			};
