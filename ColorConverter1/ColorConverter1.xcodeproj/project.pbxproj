@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8060CE73243C78EC009649CB /* RGBtoHEX.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8060CE72243C78EC009649CB /* RGBtoHEX.swift */; };
+		8060CE75243C78FC009649CB /* HEXtoRGB.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8060CE74243C78FC009649CB /* HEXtoRGB.swift */; };
 		80B7FC1624322B7B00C29209 /* ColorConverter1 WatchKit App.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = 80B7FC1524322B7B00C29209 /* ColorConverter1 WatchKit App.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		80B7FC1C24322B7B00C29209 /* Interface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 80B7FC1A24322B7B00C29209 /* Interface.storyboard */; };
 		80B7FC1E24322B7E00C29209 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 80B7FC1D24322B7E00C29209 /* Assets.xcassets */; };
@@ -63,6 +65,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		8060CE72243C78EC009649CB /* RGBtoHEX.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RGBtoHEX.swift; sourceTree = "<group>"; };
+		8060CE74243C78FC009649CB /* HEXtoRGB.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HEXtoRGB.swift; sourceTree = "<group>"; };
 		80B7FC1124322B7B00C29209 /* ColorConverter1.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ColorConverter1.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		80B7FC1524322B7B00C29209 /* ColorConverter1 WatchKit App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "ColorConverter1 WatchKit App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		80B7FC1B24322B7B00C29209 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Interface.storyboard; sourceTree = "<group>"; };
@@ -124,6 +128,8 @@
 			isa = PBXGroup;
 			children = (
 				80B7FC2924322B7E00C29209 /* ContentView.swift */,
+				8060CE72243C78EC009649CB /* RGBtoHEX.swift */,
+				8060CE74243C78FC009649CB /* HEXtoRGB.swift */,
 				80B7FC2B24322B7E00C29209 /* HostingController.swift */,
 				80B7FC2D24322B7E00C29209 /* ExtensionDelegate.swift */,
 				80B7FC2F24322B7E00C29209 /* NotificationController.swift */,
@@ -274,6 +280,8 @@
 			files = (
 				80B7FC2C24322B7E00C29209 /* HostingController.swift in Sources */,
 				80B7FC2A24322B7E00C29209 /* ContentView.swift in Sources */,
+				8060CE73243C78EC009649CB /* RGBtoHEX.swift in Sources */,
+				8060CE75243C78FC009649CB /* HEXtoRGB.swift in Sources */,
 				80B7FC3024322B7E00C29209 /* NotificationController.swift in Sources */,
 				80B7FC2E24322B7E00C29209 /* ExtensionDelegate.swift in Sources */,
 				80B7FC3224322B7E00C29209 /* NotificationView.swift in Sources */,
@@ -433,7 +441,7 @@
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = it.antonellacirma.ColorConverter1.watchkitapp.watchkitextension;
+				PRODUCT_BUNDLE_IDENTIFIER = antonellacirma.ColorConverter1.watchkitapp.watchkitextension;
 				PRODUCT_NAME = "${TARGET_NAME}";
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
@@ -457,7 +465,7 @@
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = it.antonellacirma.ColorConverter1.watchkitapp.watchkitextension;
+				PRODUCT_BUNDLE_IDENTIFIER = antonellacirma.ColorConverter1.watchkitapp.watchkitextension;
 				PRODUCT_NAME = "${TARGET_NAME}";
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
@@ -476,7 +484,7 @@
 				DEVELOPMENT_TEAM = 22SRFN3JA2;
 				IBSC_MODULE = ColorConverter1_WatchKit_Extension;
 				INFOPLIST_FILE = "ColorConverter1 WatchKit App/Info.plist";
-				PRODUCT_BUNDLE_IDENTIFIER = it.antonellacirma.ColorConverter1.watchkitapp;
+				PRODUCT_BUNDLE_IDENTIFIER = antonellacirma.ColorConverter1.watchkitapp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
@@ -495,7 +503,7 @@
 				DEVELOPMENT_TEAM = 22SRFN3JA2;
 				IBSC_MODULE = ColorConverter1_WatchKit_Extension;
 				INFOPLIST_FILE = "ColorConverter1 WatchKit App/Info.plist";
-				PRODUCT_BUNDLE_IDENTIFIER = it.antonellacirma.ColorConverter1.watchkitapp;
+				PRODUCT_BUNDLE_IDENTIFIER = antonellacirma.ColorConverter1.watchkitapp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
@@ -512,7 +520,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 22SRFN3JA2;
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = it.antonellacirma.ColorConverter1;
+				PRODUCT_BUNDLE_IDENTIFIER = antonellacirma.ColorConverter1.watchkitapp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 			};
@@ -525,7 +533,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 22SRFN3JA2;
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = it.antonellacirma.ColorConverter1;
+				PRODUCT_BUNDLE_IDENTIFIER = antonellacirma.ColorConverter1.watchkitapp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 			};
