@@ -73,7 +73,7 @@ struct HexView: View {
                 Picker(selection: $select2, label: Text("")) {
                     ForEach(0 ..< picker2.count) {
                         Text(self.string2[$0]).font(.footnote)
-                            
+                        
                     }
                 }
                 Picker(selection: $select3, label: Text("")) {
@@ -107,9 +107,7 @@ struct HexView: View {
                 Text(", ")
                 Text(B).foregroundColor(Color.blue)
             }
-             .listStyle(CarouselListStyle())
         }.navigationBarTitle("Color Converter")
-        
     }
 }
 

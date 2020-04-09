@@ -57,7 +57,7 @@ struct RGBView: View {
     var body: some View {
         
         VStack {
-         
+            
             Spacer()
             Spacer()
             HStack{
@@ -100,7 +100,7 @@ struct RGBView: View {
                 Text("#\(divideR)\(restoR)\(divideG)\(restoG)\(divideB)\(restoB)")
             }
         }
-        .listStyle(CarouselListStyle())
+            
         .navigationBarTitle("Color Converter")
         
     }
@@ -109,7 +109,7 @@ struct RGBView: View {
 
 struct RGBView_Previews: PreviewProvider {
     static var previews: some View {
-       RGBView()
+        RGBView()
         
     }
 }
