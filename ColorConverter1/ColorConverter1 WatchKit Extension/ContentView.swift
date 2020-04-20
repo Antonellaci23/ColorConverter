@@ -31,7 +31,11 @@ struct ContentView: View {
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView()
-        
+        Group {
+        ContentView().previewDevice("Apple Watch Series 3 - 38mm").previewDisplayName("38mm")
+        ContentView().previewDevice("Apple Watch Series 4 - 40mm").previewDisplayName("40mm")
+        ContentView().previewDevice("Apple Watch Series 4 - 42mm").previewDisplayName("42mm")
+        ContentView().previewDevice("Apple Watch Series 4 - 44mm").previewDisplayName("44mm")
+        }
     }
 }

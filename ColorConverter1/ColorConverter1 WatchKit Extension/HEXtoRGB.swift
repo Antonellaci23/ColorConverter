@@ -57,55 +57,51 @@ struct HexView: View {
     var body: some View {
         
         VStack {
-            Spacer()
-            Spacer()
             HStack{
-                Spacer()
                 Text("HEX")
-                Spacer()
             }
-            HStack {
-                Picker(selection: $select1, label: Text("")) {
-                    ForEach(0 ..< picker1.count) {
-                        Text(self.string1[$0]).font(.footnote)
+            VStack{
+                HStack {
+                    Picker(selection: $select1, label: Text("")) {
+                        ForEach(0 ..< picker1.count) {
+                            Text(self.string1[$0]).font(.footnote)
+                        }
+                    }
+                    Picker(selection: $select2, label: Text("")) {
+                        ForEach(0 ..< picker2.count) {
+                            Text(self.string2[$0]).font(.footnote)
+                        }
                     }
                 }
-                Picker(selection: $select2, label: Text("")) {
-                    ForEach(0 ..< picker2.count) {
-                        Text(self.string2[$0]).font(.footnote)
-                        
+                HStack{
+                    Picker(selection: $select3, label: Text("")) {
+                        ForEach(0 ..< picker3.count) {
+                            Text(self.string3[$0]).font(.footnote)
+                        }
+                    }
+                    Picker(selection: $select4, label: Text("")) {
+                        ForEach(0 ..< picker4.count) {
+                            Text(self.string4[$0]).font(.footnote)
+                        }
                     }
                 }
-                Picker(selection: $select3, label: Text("")) {
-                    ForEach(0 ..< picker3.count) {
-                        Text(self.string3[$0]).font(.footnote)
+                HStack{
+                    Picker(selection: $select5, label: Text("")) {
+                        ForEach(0 ..< picker5.count) {
+                            Text(self.string5[$0]).font(.footnote)
+                        }
                     }
-                }
-                Picker(selection: $select4, label: Text("")) {
-                    ForEach(0 ..< picker4.count) {
-                        Text(self.string4[$0]).font(.footnote)
-                    }
-                }
-                Picker(selection: $select5, label: Text("")) {
-                    ForEach(0 ..< picker5.count) {
-                        Text(self.string5[$0]).font(.footnote)
-                    }
-                }
-                Picker(selection: $select6, label: Text("")) {
-                    ForEach(0 ..< picker6.count) {
-                        Text(self.string6[$0]).font(.footnote)
+                    Picker(selection: $select6, label: Text("")) {
+                        ForEach(0 ..< picker6.count) {
+                            Text(self.string6[$0]).font(.footnote)
+                        }
                     }
                 }
             }
             Spacer()
             Spacer()
             HStack {
-                Text("RGB")
-                Text(R).foregroundColor(Color.red)
-                Text(", ")
-                Text(G).foregroundColor(Color.green)
-                Text(", ")
-                Text(B).foregroundColor(Color.blue)
+                Text("RGB \(R),\(G),\(B)")
             }
         }.navigationBarTitle("Color Converter")
     }

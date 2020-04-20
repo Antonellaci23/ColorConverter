@@ -97,7 +97,7 @@ struct RGBView: View {
             Spacer()
             Spacer()
             HStack {
-                Text("#\(divideR)\(restoR)\(divideG)\(restoG)\(divideB)\(restoB)")
+                Text("HEX #\(divideR)\(restoR)\(divideG)\(restoG)\(divideB)\(restoB)")
             }
         }
             
