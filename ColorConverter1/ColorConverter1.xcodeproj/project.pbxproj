@@ -82,6 +82,8 @@
 		80B7FC3624322B7E00C29209 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		80B7FC3824322B7E00C29209 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		80B7FC3924322B7E00C29209 /* PushNotificationPayload.apns */ = {isa = PBXFileReference; lastKnownFileType = text; path = PushNotificationPayload.apns; sourceTree = "<group>"; };
+		80DC569F2451B7C50083E4FF /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
+		80DC56A02451B7CF0083E4FF /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; name = .gitignore; path = ../.gitignore; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,6 +100,7 @@
 		80B7FC0A24322B7B00C29209 = {
 			isa = PBXGroup;
 			children = (
+				80DC569C2451B77D0083E4FF /* extra */,
 				80B7FC1924322B7B00C29209 /* ColorConverter1 WatchKit App */,
 				80B7FC2824322B7E00C29209 /* ColorConverter1 WatchKit Extension */,
 				80B7FC1224322B7B00C29209 /* Products */,
@@ -148,6 +151,15 @@
 				80B7FC3624322B7E00C29209 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		80DC569C2451B77D0083E4FF /* extra */ = {
+			isa = PBXGroup;
+			children = (
+				80DC569F2451B7C50083E4FF /* README.md */,
+				80DC56A02451B7CF0083E4FF /* .gitignore */,
+			);
+			name = extra;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
