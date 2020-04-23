@@ -20,7 +20,6 @@
 		80B7FC3224322B7E00C29209 /* NotificationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80B7FC3124322B7E00C29209 /* NotificationView.swift */; };
 		80B7FC3424322B7E00C29209 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 80B7FC3324322B7E00C29209 /* Assets.xcassets */; };
 		80B7FC3724322B7E00C29209 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 80B7FC3624322B7E00C29209 /* Preview Assets.xcassets */; };
-		80DC569B2451B0E50083E4FF /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 80DC569A2451B0E50083E4FF /* .gitignore */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -83,7 +82,6 @@
 		80B7FC3624322B7E00C29209 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		80B7FC3824322B7E00C29209 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		80B7FC3924322B7E00C29209 /* PushNotificationPayload.apns */ = {isa = PBXFileReference; lastKnownFileType = text; path = PushNotificationPayload.apns; sourceTree = "<group>"; };
-		80DC569A2451B0E50083E4FF /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -139,7 +137,6 @@
 				80B7FC3324322B7E00C29209 /* Assets.xcassets */,
 				80B7FC3824322B7E00C29209 /* Info.plist */,
 				80B7FC3924322B7E00C29209 /* PushNotificationPayload.apns */,
-				80DC569A2451B0E50083E4FF /* .gitignore */,
 				80B7FC3524322B7E00C29209 /* Preview Content */,
 			);
 			path = "ColorConverter1 WatchKit Extension";
@@ -253,7 +250,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				80DC569B2451B0E50083E4FF /* .gitignore in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
