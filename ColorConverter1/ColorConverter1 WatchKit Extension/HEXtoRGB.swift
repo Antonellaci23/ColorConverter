@@ -54,63 +54,142 @@ struct HexView: View {
         let value = String((num5*16) + num6)
         return(value)
     }
+    
+    
+    var resto1: String {
+        let num1: Int = select1 % 16
+        let str1 = String(num1, radix: 16)
+        return(str1)
+    }
+    var resto2: String {
+        let num2: Int = select2 % 16
+        let str2 = String(num2, radix: 16)
+        return(str2)
+    }
+    var resto3: String {
+        let num3: Int = select3 % 16
+        let str3 = String(num3, radix: 16)
+        return(str3)
+    }
+    var resto4: String {
+        let num4: Int = select4 % 16
+        let str4 = String(num4, radix: 16)
+        return(str4)
+    }
+    var resto5: String {
+        let num5: Int = select5 % 16
+        let str5 = String(num5, radix: 16)
+        return(str5)
+    }
+    var resto6: String {
+        let num6: Int = select6 % 16
+        let str6 = String(num6, radix: 16)
+        return(str6)
+    }
+    
+    
+    
+    var colorR: Int? {
+        let strR: String = R
+        let numR = Int(strR, radix: 10)
+        return(numR)
+    }
+    
+    var colorG: Int? {
+        let strG: String = G
+        let numG = Int(strG, radix: 10)
+        return(numG)
+    }
+    
+    var colorB: Int? {
+        let strB: String = B
+        let numB = Int(strB, radix: 10)
+        return(numB)
+    }
+    
     var body: some View {
         
-        VStack {
-            HStack{
-                Text("HEX")
-            }
-            VStack{
+        ScrollView {
+            VStack {
+                HStack{
+                    Text("HEX")
+                }
                 HStack {
                     Picker(selection: $select1, label: Text("")) {
                         ForEach(0 ..< picker1.count) {
-                            Text(self.string1[$0]).font(.footnote)
+                            Text(self.string1[$0])
                         }
                     }
+                    .frame(height: 80.0)
+                    
                     Picker(selection: $select2, label: Text("")) {
                         ForEach(0 ..< picker2.count) {
-                            Text(self.string2[$0]).font(.footnote)
+                            Text(self.string2[$0])
                         }
                     }
-                }
-                HStack{
+                    .frame(height: 80.0)
+                    
                     Picker(selection: $select3, label: Text("")) {
                         ForEach(0 ..< picker3.count) {
                             Text(self.string3[$0]).font(.footnote)
                         }
                     }
+                    .frame(height: 80.0)
+                }
+                
+                HStack{
+                    
                     Picker(selection: $select4, label: Text("")) {
                         ForEach(0 ..< picker4.count) {
                             Text(self.string4[$0]).font(.footnote)
                         }
                     }
-                }
-                HStack{
+                    .frame(height: 80.0)
+                    
                     Picker(selection: $select5, label: Text("")) {
                         ForEach(0 ..< picker5.count) {
                             Text(self.string5[$0]).font(.footnote)
                         }
                     }
+                    .frame(height: 80.0)
                     Picker(selection: $select6, label: Text("")) {
                         ForEach(0 ..< picker6.count) {
                             Text(self.string6[$0]).font(.footnote)
                         }
                     }
+                    .frame(height: 80.0)
                 }
+                
+                
+                VStack{
+                    Text("HEX #\(resto1)\(resto2)\(resto3)\(resto4)\(resto5)\(resto6)")
+                    HStack {
+                        Text("RGB \(R),\(G),\(B)")
+                        
+                    }
+                }
+                Rectangle()
+                    
+                    .fill(Color(red: Double(colorR!) / 255, green:  Double(colorG!) / 255, blue: Double(colorB!) / 255))
+                    .frame(minWidth: 0, maxWidth: .infinity, minHeight: 100, maxHeight: .infinity, alignment: .bottom)
+                    .cornerRadius(10)
+                Spacer()
             }
-            Spacer()
-            Spacer()
-            HStack {
-                Text("RGB \(R),\(G),\(B)")
-            }
-        }.navigationBarTitle("Color Converter")
+            .navigationBarTitle("Color Converter")
+            
+        }
     }
 }
 
 
 struct HexView_Previews: PreviewProvider {
     static var previews: some View {
-        HexView()
+        Group {
+            HexView().previewDevice("Apple Watch Series 3 - 38mm").previewDisplayName("38mm")
+            HexView().previewDevice("Apple Watch Series 4 - 40mm").previewDisplayName("40mm")
+            HexView().previewDevice("Apple Watch Series 4 - 42mm").previewDisplayName("42mm")
+            HexView().previewDevice("Apple Watch Series 4 - 44mm").previewDisplayName("44mm")
+        }
         
     }
 }

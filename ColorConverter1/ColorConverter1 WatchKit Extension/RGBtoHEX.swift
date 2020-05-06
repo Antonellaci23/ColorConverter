@@ -12,13 +12,13 @@ struct RGBView: View {
     
     var pickerR: [Int] = Array ( 0...255)
     var stringR = (0...255).map(String.init)
-    @State var selectR = 0
+    @State var selectR = 109
     var pickerG: [Int] = Array (0...255)
     var stringG = (0...255).map(String.init)
-    @State var selectG = 0
+    @State var selectG = 214
     var pickerB: [Int] = Array (0...255)
     var stringB = (0...255).map(String.init)
-    @State var selectB = 0
+    @State var selectB = 184
     
     var divideR: String {
         let numR: Int = selectR / 16
@@ -55,11 +55,9 @@ struct RGBView: View {
     
     
     var body: some View {
-        
+        ScrollView{
         VStack {
             
-            Spacer()
-            Spacer()
             HStack{
                 Spacer()
                 Text("R")
@@ -80,32 +78,45 @@ struct RGBView: View {
                         Text(self.stringR[$0])
                     }
                 }
-                .colorMultiply(/*@START_MENU_TOKEN@*/ /*@PLACEHOLDER=Color@*/.red/*@END_MENU_TOKEN@*/)
+                .frame(height: 100.0)
+                .colorMultiply(Color.red)
                 Picker(selection: $selectG, label: Text("")) {
                     ForEach(0 ..< pickerG.count) {
                         Text(self.stringG[$0])
                     }
                 }
-                .colorMultiply(/*@START_MENU_TOKEN@*/ /*@PLACEHOLDER=Color@*/.green/*@END_MENU_TOKEN@*/)
+                .frame(height: 100.0)
+                .colorMultiply(Color.green)
                 Picker(selection: $selectB, label: Text("")) {
                     ForEach(0 ..< pickerB.count) {
                         Text(self.stringB[$0])
                     }
                 }
-                .colorMultiply(/*@START_MENU_TOKEN@*/ /*@PLACEHOLDER=Color@*/.blue/*@END_MENU_TOKEN@*/)
+                .frame(height: 100.0)
+                .colorMultiply(Color.blue)
             }
             Spacer()
             Spacer()
-            HStack {
-                Text("HEX #\(divideR)\(restoR)\(divideG)\(restoG)\(divideB)\(restoB)")
+            VStack{
+                Text("RGB \(selectR),\(selectG),\(selectB)")
+                Spacer()
+                HStack {
+                    Text("HEX #\(divideR)\(restoR)\(divideG)\(restoG)\(divideB)\(restoB)")
+                }
             }
-        }
+            Spacer()
+            Rectangle()
             
+            .fill(Color(red: Double(selectR) / 255, green:  Double(selectG) / 255, blue:  Double(selectB) / 255))
+             .frame(minWidth: 0, maxWidth: .infinity, minHeight: 100, maxHeight: .infinity, alignment: .bottom)
+            .cornerRadius(10)
+            Spacer()
+        }
         .navigationBarTitle("Color Converter")
         
     }
 }
-
+}
 
 struct RGBView_Previews: PreviewProvider {
     static var previews: some View {
