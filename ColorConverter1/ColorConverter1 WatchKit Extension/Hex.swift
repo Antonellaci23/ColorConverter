@@ -185,7 +185,8 @@ struct HexView: View {
                     }
                     .frame(height: 80.0)
                 }
-                
+                Spacer()
+                Spacer()
                 HStack{
                     
                     Picker(selection: $select4, label: Text("")) {
@@ -208,8 +209,6 @@ struct HexView: View {
                     }
                     .frame(height: 80.0)
                 }
-                
-                
                 VStack{
                     Text("HEX #\(resto1)\(resto2)\(resto3)\(resto4)\(resto5)\(resto6)")
                     HStack {
@@ -224,7 +223,6 @@ struct HexView: View {
                     .cornerRadius(10)
             }
             .navigationBarTitle("Color Converter")
-            
         }
     }
 }
@@ -233,8 +231,8 @@ struct HexView: View {
 struct HexView_Previews: PreviewProvider {
     static var previews: some View {
         Group {
-            //            HexView().previewDevice("Apple Watch Series 3 - 38mm").previewDisplayName("38mm")
-            //            HexView().previewDevice("Apple Watch Series 4 - 40mm").previewDisplayName("40mm")
+            HexView().previewDevice("Apple Watch Series 3 - 38mm").previewDisplayName("38mm")
+            HexView().previewDevice("Apple Watch Series 4 - 40mm").previewDisplayName("40mm")
             HexView().previewDevice("Apple Watch Series 4 - 42mm").previewDisplayName("42mm")
             HexView().previewDevice("Apple Watch Series 4 - 44mm").previewDisplayName("44mm")
         }

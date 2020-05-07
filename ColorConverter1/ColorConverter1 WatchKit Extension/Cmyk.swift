@@ -44,55 +44,55 @@ struct CmykView: View {
     }
     
     var colorR: Int? {
-           let strR: String = R
-           let numR = Int(strR, radix: 10)
-           return(numR)
-       }
-       
-       var colorG: Int? {
-           let strG: String = G
-           let numG = Int(strG, radix: 10)
-           return(numG)
-       }
-       
-       var colorB: Int? {
-           let strB: String = B
-           let numB = Int(strB, radix: 10)
-           return(numB)
-       }
+        let strR: String = R
+        let numR = Int(strR, radix: 10)
+        return(numR)
+    }
+    
+    var colorG: Int? {
+        let strG: String = G
+        let numG = Int(strG, radix: 10)
+        return(numG)
+    }
+    
+    var colorB: Int? {
+        let strB: String = B
+        let numB = Int(strB, radix: 10)
+        return(numB)
+    }
     
     var divideR: String {
-          let numR: Int = colorR! / 16
-          let strR = String(numR, radix: 16)
-          return(strR)
-      }
-      var restoR: String {
-          let numRR: Int = colorR! % 16
-          let strRR = String(numRR, radix: 16)
-          return(strRR)
-      }
-      
-      var divideG: String {
-          let numG: Int = colorG! / 16
-          let strG = String(numG, radix: 16)
-          return(strG)
-      }
-      var restoG: String {
-          let numGG: Int = colorG! % 16
-          let strGG = String(numGG, radix: 16)
-          return(strGG)
-      }
-      
-      var divideB: String {
-          let numB: Int = colorB! / 16
-          let strB = String(numB, radix: 16)
-          return(strB)
-      }
-      var restoB: String {
-          let numBB: Int = colorB! % 16
-          let strBB = String(numBB, radix: 16)
-          return(strBB)
-      }
+        let numR: Int = colorR! / 16
+        let strR = String(numR, radix: 16)
+        return(strR)
+    }
+    var restoR: String {
+        let numRR: Int = colorR! % 16
+        let strRR = String(numRR, radix: 16)
+        return(strRR)
+    }
+    
+    var divideG: String {
+        let numG: Int = colorG! / 16
+        let strG = String(numG, radix: 16)
+        return(strG)
+    }
+    var restoG: String {
+        let numGG: Int = colorG! % 16
+        let strGG = String(numGG, radix: 16)
+        return(strGG)
+    }
+    
+    var divideB: String {
+        let numB: Int = colorB! / 16
+        let strB = String(numB, radix: 16)
+        return(strB)
+    }
+    var restoB: String {
+        let numBB: Int = colorB! % 16
+        let strBB = String(numBB, radix: 16)
+        return(strBB)
+    }
     
     var body: some View {
         ScrollView{
@@ -149,19 +149,15 @@ struct CmykView: View {
             VStack{
                 Text("CMYK \(selectC),\(selectM),\(selectY),\(selectK)")
                 Text("RGB \(R), \(G), \(B)")
-                //                    .colorMultiply((Color(red: Double(selectR) / 255, green:  Double(selectG) / 255, blue:  Double(selectB) / 255)))
-                //                Spacer()
-                //                HStack {
-                                    Text("HEX #\(divideR)\(restoR)\(divideG)\(restoG)\(divideB)\(restoB)")
-                //                }
+                Text("HEX #\(divideR)\(restoR)\(divideG)\(restoG)\(divideB)\(restoB)")
             }
-                        Spacer()
-                        Rectangle()
-            
-                         .fill(Color(red: Double(colorR!) / 255, green:  Double(colorG!) / 255, blue: Double(colorB!) / 255))
-                         .frame(minWidth: 0, maxWidth: .infinity, minHeight: 100, maxHeight: .infinity, alignment: .bottom)
-                        .cornerRadius(10)
-                        Spacer()
+            Spacer()
+            Rectangle()
+                
+                .fill(Color(red: Double(colorR!) / 255, green:  Double(colorG!) / 255, blue: Double(colorB!) / 255))
+                .frame(minWidth: 0, maxWidth: .infinity, minHeight: 100, maxHeight: .infinity, alignment: .bottom)
+                .cornerRadius(10)
+            Spacer()
         }
         .navigationBarTitle("Color Converter")
         

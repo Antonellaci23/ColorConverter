@@ -12,13 +12,13 @@ struct RGBView: View {
     
     var pickerR: [Int] = Array ( 0...255)
     var stringR = (0...255).map(String.init)
-    @State var selectR = 109
+    @State var selectR = 0
     var pickerG: [Int] = Array (0...255)
     var stringG = (0...255).map(String.init)
-    @State var selectG = 214
+    @State var selectG = 0
     var pickerB: [Int] = Array (0...255)
     var stringB = (0...255).map(String.init)
-    @State var selectB = 184
+    @State var selectB = 0
     
     var divideR: String {
         let numR: Int = selectR / 16
@@ -159,10 +159,8 @@ struct RGBView: View {
                     .fill(Color(red: Double(selectR) / 255, green:  Double(selectG) / 255, blue:  Double(selectB) / 255))
                     .frame(minWidth: 0, maxWidth: .infinity, minHeight: 100, maxHeight: .infinity, alignment: .bottom)
                     .cornerRadius(10)
-                Spacer()
             }
             .navigationBarTitle("Color Converter")
-            
         }
     }
 }
@@ -170,6 +168,5 @@ struct RGBView: View {
 struct RGBView_Previews: PreviewProvider {
     static var previews: some View {
         RGBView()
-        
     }
 }
