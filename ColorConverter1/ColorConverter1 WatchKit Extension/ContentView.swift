@@ -22,6 +22,10 @@ struct ContentView: View {
             NavigationLink(destination: HexView()) {
                 Text("HEX to RGB")
             }
+            Spacer()
+                      NavigationLink(destination: CmykView()) {
+                          Text("CMYK to RGB")
+                      }
             }
         .navigationBarTitle("Color Converter")
         .frame(height: 100.0)
@@ -32,8 +36,8 @@ struct ContentView: View {
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         Group {
-        ContentView().previewDevice("Apple Watch Series 3 - 38mm").previewDisplayName("38mm")
-        ContentView().previewDevice("Apple Watch Series 4 - 40mm").previewDisplayName("40mm")
+//        ContentView().previewDevice("Apple Watch Series 3 - 38mm").previewDisplayName("38mm")
+//        ContentView().previewDevice("Apple Watch Series 4 - 40mm").previewDisplayName("40mm")
         ContentView().previewDevice("Apple Watch Series 4 - 42mm").previewDisplayName("42mm")
         ContentView().previewDevice("Apple Watch Series 4 - 44mm").previewDisplayName("44mm")
         }

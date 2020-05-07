@@ -185,8 +185,8 @@ struct HexView: View {
 struct HexView_Previews: PreviewProvider {
     static var previews: some View {
         Group {
-            HexView().previewDevice("Apple Watch Series 3 - 38mm").previewDisplayName("38mm")
-            HexView().previewDevice("Apple Watch Series 4 - 40mm").previewDisplayName("40mm")
+//            HexView().previewDevice("Apple Watch Series 3 - 38mm").previewDisplayName("38mm")
+//            HexView().previewDevice("Apple Watch Series 4 - 40mm").previewDisplayName("40mm")
             HexView().previewDevice("Apple Watch Series 4 - 42mm").previewDisplayName("42mm")
             HexView().previewDevice("Apple Watch Series 4 - 44mm").previewDisplayName("44mm")
         }
