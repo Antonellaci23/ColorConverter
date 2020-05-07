@@ -87,8 +87,6 @@ struct HexView: View {
         return(str6)
     }
     
-    
-    
     var colorR: Int? {
         let strR: String = R
         let numR = Int(strR, radix: 10)
@@ -105,6 +103,57 @@ struct HexView: View {
         let strB: String = B
         let numB = Int(strB, radix: 10)
         return(numB)
+    }
+    
+    var C: String {
+        let r1 = Double(colorR!)/255
+        let g1 = Double (colorG!)/255
+        let b1 = Double (colorB!)/255
+        let k = 1-(max(max(r1, g1), b1))
+        var numC = ((1-r1-k)/(1-k))
+        if (1-k == 0) {
+            numC = 0
+        }
+        let roundedC = Int((numC*100).rounded())
+        let strC = String (roundedC)
+        return (strC)
+    }
+    var M: String {
+        let r1 = Double(colorR!)/255
+        let g1 = Double (colorG!)/255
+        let b1 = Double (colorB!)/255
+        let k = 1-(max(max(r1, g1), b1))
+        var numM = ((1-g1-k)/(1-k))
+        if (1-k == 0) {
+            numM = 0
+        }
+        let roundedM = Int((numM*100).rounded())
+        let strM = String (roundedM)
+        return (strM)
+    }
+    
+    var Y: String {
+        let r1 = Double(colorR!)/255
+        let g1 = Double (colorG!)/255
+        let b1 = Double (colorB!)/255
+        let k = 1-(max(max(r1, g1), b1))
+        var numY = ((1-b1-k)/(1-k))
+        if (1-k == 0) {
+            numY = 0
+        }
+        let roundedY = Int((numY*100).rounded())
+        let strY = String (roundedY)
+        return (strY)
+    }
+    var K: String {
+        let r1 = Double(colorR!)/255
+        let g1 = Double (colorG!)/255
+        let b1 = Double (colorB!)/255
+        let k = (max(max(r1, g1), b1))
+        let k1 = 1-k
+        let intK = Int((k1*100).rounded())
+        let strK = String (intK)
+        return (strK)
     }
     
     var body: some View {
@@ -165,15 +214,14 @@ struct HexView: View {
                     Text("HEX #\(resto1)\(resto2)\(resto3)\(resto4)\(resto5)\(resto6)")
                     HStack {
                         Text("RGB \(R),\(G),\(B)")
-                        
                     }
+                    Text("CMYK \(C),\(M),\(Y),\(K)")
                 }
                 Rectangle()
                     
                     .fill(Color(red: Double(colorR!) / 255, green:  Double(colorG!) / 255, blue: Double(colorB!) / 255))
                     .frame(minWidth: 0, maxWidth: .infinity, minHeight: 100, maxHeight: .infinity, alignment: .bottom)
                     .cornerRadius(10)
-                Spacer()
             }
             .navigationBarTitle("Color Converter")
             
@@ -185,8 +233,8 @@ struct HexView: View {
 struct HexView_Previews: PreviewProvider {
     static var previews: some View {
         Group {
-//            HexView().previewDevice("Apple Watch Series 3 - 38mm").previewDisplayName("38mm")
-//            HexView().previewDevice("Apple Watch Series 4 - 40mm").previewDisplayName("40mm")
+            //            HexView().previewDevice("Apple Watch Series 3 - 38mm").previewDisplayName("38mm")
+            //            HexView().previewDevice("Apple Watch Series 4 - 40mm").previewDisplayName("40mm")
             HexView().previewDevice("Apple Watch Series 4 - 42mm").previewDisplayName("42mm")
             HexView().previewDevice("Apple Watch Series 4 - 44mm").previewDisplayName("44mm")
         }
