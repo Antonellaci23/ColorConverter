@@ -95,69 +95,69 @@ struct CmykView: View {
     }
     
     var body: some View {
-        ScrollView{
-            HStack {
-                VStack{
-                    Text("C")
-                    Picker(selection: $selectC, label: Text("")) {
-                        ForEach(0 ..< pickerC.count) {
-                            Text(self.stringC[$0])
-                            
+        ScrollView(.vertical){
+            ScrollView(.horizontal, showsIndicators: false) {
+                HStack {
+                    VStack{
+                        Text("C")
+                        Picker(selection: $selectC, label: Text("")) {
+                            ForEach(0 ..< pickerC.count) {
+                                Text(self.stringC[$0])
+                                    .font(.title)
+                            }
                         }
+                        .frame(width: 80, height: 100.0)
                     }
-                    .frame(height: 100.0)
-                }
-                .colorMultiply(Color(red: 0 / 255, green:  255 / 255, blue: 255 / 255))
-                VStack{
-                    Text("M")
-                    Picker(selection: $selectM, label: Text("")) {
-                        ForEach(0 ..< pickerM.count) {
-                            Text(self.stringM[$0])
+                    .colorMultiply(Color(red: 0 / 255, green:  255 / 255, blue: 255 / 255))
+                    VStack{
+                        Text("M")
+                        Picker(selection: $selectM, label: Text("")) {
+                            ForEach(0 ..< pickerM.count) {
+                                Text(self.stringM[$0])
+                                .font(.title)
+                            }
                         }
-                    }
-                    .frame(height: 100.0)
-                }
+                        .frame(width: 80, height: 100.0)
+                    } 
+                    .colorMultiply(Color(red: 255 / 255, green: 0 / 255, blue: 255 / 255))
                     
-                .colorMultiply(Color(red: 255 / 255, green: 0 / 255, blue: 255 / 255))
-            }
-            Spacer()
-            Spacer()
-            HStack {
-                VStack{
-                    Text("Y")
-                    Picker(selection: $selectY, label: Text("")) {
-                        ForEach(0 ..< pickerY.count) {
-                            Text(self.stringY[$0])
+                    VStack{
+                        Text("Y")
+                        Picker(selection: $selectY, label: Text("")) {
+                            ForEach(0 ..< pickerY.count) {
+                                Text(self.stringY[$0])
+                                .font(.title)
+                            }
                         }
+                        .frame(width: 80, height: 100.0)
                     }
-                    .frame(height: 100.0)
-                }
-                .colorMultiply(Color(red: 255 / 255, green: 255 / 255, blue: 0 / 255))
-                VStack{
-                    Text("K")
-                    Picker(selection: $selectK, label: Text("")) {
-                        ForEach(0 ..< pickerK.count) {
-                            Text(self.stringK[$0])
+                    .colorMultiply(Color(red: 255 / 255, green: 255 / 255, blue: 0 / 255))
+                    VStack{
+                        Text("K")
+                        Picker(selection: $selectK, label: Text("")) {
+                            ForEach(0 ..< pickerK.count) {
+                                Text(self.stringK[$0])
+                                .font(.title)
+                            }
                         }
+                        .frame(width: 80, height: 100.0)
                     }
-                    .frame(height: 100.0)
+                    .colorMultiply(Color.white)
                 }
-                .colorMultiply(Color.white)
             }
-            Spacer()
-            Spacer()
+
             VStack{
                 Text("CMYK \(selectC),\(selectM),\(selectY),\(selectK)")
                 Text("RGB \(R), \(G), \(B)")
                 Text("HEX #\(divideR)\(restoR)\(divideG)\(restoG)\(divideB)\(restoB)")
+                Spacer()
+                Spacer()
+                Text("Color Preview")
             }
-            Spacer()
             Rectangle()
-                
                 .fill(Color(red: Double(colorR!) / 255, green:  Double(colorG!) / 255, blue: Double(colorB!) / 255))
-                .frame(minWidth: 0, maxWidth: .infinity, minHeight: 100, maxHeight: .infinity, alignment: .bottom)
+                .frame(minWidth: 0, maxWidth: .infinity, minHeight: 140, maxHeight: .infinity, alignment: .bottom)
                 .cornerRadius(10)
-            Spacer()
         }
         .navigationBarTitle("Color Converter")
         
@@ -166,7 +166,12 @@ struct CmykView: View {
 
 struct CmykView_Previews: PreviewProvider {
     static var previews: some View {
-        CmykView()
+        Group {
+            CmykView().previewDevice("Apple Watch Series 3 - 38mm").previewDisplayName("38mm")
+            CmykView().previewDevice("Apple Watch Series 4 - 40mm").previewDisplayName("40mm")
+            CmykView().previewDevice("Apple Watch Series 4 - 42mm").previewDisplayName("42mm")
+            CmykView().previewDevice("Apple Watch Series 4 - 44mm").previewDisplayName("44mm")
+        }
         
     }
 }

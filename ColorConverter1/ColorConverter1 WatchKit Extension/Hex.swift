@@ -157,76 +157,79 @@ struct HexView: View {
     }
     
     var body: some View {
-        
-        ScrollView {
-            VStack {
-                HStack{
-                    Text("HEX")
-                }
-                HStack {
+        ScrollView(.vertical){
+            ScrollView(.horizontal, showsIndicators: false) {
+                HStack() {
                     Picker(selection: $select1, label: Text("")) {
                         ForEach(0 ..< picker1.count) {
                             Text(self.string1[$0])
+                                .font(.title)
                         }
                     }
-                    .frame(height: 80.0)
+                    .frame(width: 80, height: 100.0)
                     
                     Picker(selection: $select2, label: Text("")) {
                         ForEach(0 ..< picker2.count) {
                             Text(self.string2[$0])
+                            .font(.title)
                         }
                     }
-                    .frame(height: 80.0)
+                    .frame(width: 80, height: 100.0)
                     
                     Picker(selection: $select3, label: Text("")) {
                         ForEach(0 ..< picker3.count) {
                             Text(self.string3[$0]).font(.footnote)
+                            .font(.title)
                         }
                     }
-                    .frame(height: 80.0)
-                }
-                Spacer()
-                Spacer()
-                HStack{
+                    .frame(width: 80, height: 100.0)
                     
                     Picker(selection: $select4, label: Text("")) {
                         ForEach(0 ..< picker4.count) {
                             Text(self.string4[$0]).font(.footnote)
+                            .font(.title)
                         }
                     }
-                    .frame(height: 80.0)
+                    .frame(width: 80, height: 100.0)
                     
                     Picker(selection: $select5, label: Text("")) {
                         ForEach(0 ..< picker5.count) {
                             Text(self.string5[$0]).font(.footnote)
+                            .font(.title)
                         }
                     }
-                    .frame(height: 80.0)
+                    .frame(width: 80, height: 100.0)
+                    
                     Picker(selection: $select6, label: Text("")) {
                         ForEach(0 ..< picker6.count) {
                             Text(self.string6[$0]).font(.footnote)
+                            .font(.title)
                         }
                     }
-                    .frame(height: 80.0)
+                    .frame(width: 80, height: 100.0)
                 }
-                VStack{
-                    Text("HEX #\(resto1)\(resto2)\(resto3)\(resto4)\(resto5)\(resto6)")
-                    HStack {
-                        Text("RGB \(R),\(G),\(B)")
-                    }
-                    Text("CMYK \(C),\(M),\(Y),\(K)")
-                }
-                Rectangle()
-                    
-                    .fill(Color(red: Double(colorR!) / 255, green:  Double(colorG!) / 255, blue: Double(colorB!) / 255))
-                    .frame(minWidth: 0, maxWidth: .infinity, minHeight: 100, maxHeight: .infinity, alignment: .bottom)
-                    .cornerRadius(10)
             }
-            .navigationBarTitle("Color Converter")
+            VStack(){
+                Text("HEX #\(resto1)\(resto2)\(resto3)\(resto4)\(resto5)\(resto6)")
+                HStack {
+                    Text("RGB \(R),\(G),\(B)")
+                }
+                Text("CMYK \(C),\(M),\(Y),\(K)")
+                Spacer()
+                Spacer()
+                Text("Color Preview")
+            }
+            Rectangle()
+                .fill(Color(red: Double(colorR!) / 255, green:  Double(colorG!) / 255, blue: Double(colorB!) / 255))
+                .frame(minWidth: 0, maxWidth: .infinity, minHeight: 140, maxHeight: .infinity, alignment: .bottom)
+                .cornerRadius(10)
+                
+                .padding(.top)
+                .frame(height: 350)
         }
+        .navigationBarTitle("Color Converter")
     }
 }
-
 
 struct HexView_Previews: PreviewProvider {
     static var previews: some View {

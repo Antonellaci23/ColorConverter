@@ -107,7 +107,7 @@ struct RGBView: View {
     var body: some View {
         ScrollView{
             VStack {
-                
+                ScrollView(.horizontal, showsIndicators: false){
                 HStack{
                     Spacer()
                     Text("R")
@@ -126,24 +126,29 @@ struct RGBView: View {
                     Picker(selection: $selectR, label: Text("")) {
                         ForEach(0 ..< pickerR.count) {
                             Text(self.stringR[$0])
+                                .font(.title)
+
                         }
                     }
-                    .frame(height: 100.0)
+                    .frame(width: 80, height: 100.0)
                     .colorMultiply(Color.red)
                     Picker(selection: $selectG, label: Text("")) {
                         ForEach(0 ..< pickerG.count) {
                             Text(self.stringG[$0])
+                            .font(.title)
                         }
                     }
-                    .frame(height: 100.0)
+                    .frame(width: 80, height: 100.0)
                     .colorMultiply(Color.green)
                     Picker(selection: $selectB, label: Text("")) {
                         ForEach(0 ..< pickerB.count) {
                             Text(self.stringB[$0])
+                            .font(.title)
                         }
                     }
-                    .frame(height: 100.0)
+                    .frame(width: 80, height: 100.0)
                     .colorMultiply(Color.blue)
+                }
                 }
                 Spacer()
                 Spacer()
@@ -152,12 +157,14 @@ struct RGBView: View {
                     
                     Text("HEX #\(divideR)\(restoR)\(divideG)\(restoG)\(divideB)\(restoB)")
                     Text("CMYK \(C),\(M),\(Y),\(K)")
+                    Spacer()
+                    Spacer()
+                    Text("Color Preview")
                 }
-                Spacer()
+                
                 Rectangle()
-                    
                     .fill(Color(red: Double(selectR) / 255, green:  Double(selectG) / 255, blue:  Double(selectB) / 255))
-                    .frame(minWidth: 0, maxWidth: .infinity, minHeight: 100, maxHeight: .infinity, alignment: .bottom)
+                    .frame(minWidth: 0, maxWidth: .infinity, minHeight: 140, maxHeight: .infinity, alignment: .bottom)
                     .cornerRadius(10)
             }
             .navigationBarTitle("Color Converter")
@@ -166,7 +173,14 @@ struct RGBView: View {
 }
 
 struct RGBView_Previews: PreviewProvider {
+    
     static var previews: some View {
-        RGBView()
+        Group {
+            RGBView().previewDevice("Apple Watch Series 3 - 38mm").previewDisplayName("38mm")
+            RGBView().previewDevice("Apple Watch Series 4 - 40mm").previewDisplayName("40mm")
+            RGBView().previewDevice("Apple Watch Series 4 - 42mm").previewDisplayName("42mm")
+            RGBView().previewDevice("Apple Watch Series 4 - 44mm").previewDisplayName("44mm")
+        }
     }
 }
+

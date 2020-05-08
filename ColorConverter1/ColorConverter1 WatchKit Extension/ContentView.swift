@@ -12,7 +12,6 @@ import SwiftUI
 struct ContentView: View {
     
     var body: some View {
-        
         VStack {
             Spacer()
             NavigationLink(destination: RGBView()) {
@@ -32,7 +31,6 @@ struct ContentView: View {
         }
         .navigationBarTitle("Color Converter")
         .frame(height: 100.0)
-        
     }
 }
 
